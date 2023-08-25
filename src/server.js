@@ -17,13 +17,6 @@ app.use('/v1',webRoutes);
 app.set('views', path.join(__dirname,'views'));
 app.set('view engine', 'ejs')
 
-
-
-app.get('/hoidanit', (req, res) => {
-  //res.send('Hello World!123')
-  res.render('sample.ejs')
-})
-
 app.listen(port,hostname, () => {
   console.log(`Example app listening on port ${port}`)
 })
