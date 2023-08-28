@@ -1,7 +1,7 @@
 
 const connection = require('../config/database')
 const getHomepage = (req,res) => {
-    res.send('Hello World Hoang Trong Minh');
+    return res.render('home.ejs')
 }
 
 const getHoidanit = (req, res) => {
