@@ -1,32 +1,34 @@
 
 const connection = require('../config/database')
-const getHomepage = (req,res) => {
-    return res.render('home.ejs')
+const getHomepage = (req, res) => {
+  return res.render('home.ejs')
 }
 
 const getHoidanit = (req, res) => {
-    connection.query(
-        'SELECT * FROM Users;',
-        (err,results,fail) => {
-          if (err) {
-            console.error('Lỗi truy vấn:', err);
-            return;
-          }
-      
-          // In ra dữ liệu
-          console.log('Dữ liệu trong bảng:');
-          console.log(results);
-          let str = 'Dữ liệu trong bảng:' + JSON.stringify(results)
-          res.send(str)
-          
-        }
-      )
-    
-      
-  }
-  
+  connection.query(
+    'SELECT * FROM Users;',
+    (err, results, fail) => {
+      if (err) {
+        console.error('Lỗi truy vấn:', err);
+        return;
+      }
 
+      // In ra dữ liệu
+      console.log('Dữ liệu trong bảng:');
+      console.log(results);
+      let str = 'Dữ liệu trong bảng:' + JSON.stringify(results)
+      res.send(str)
+
+    }
+  )
+}
+
+const postCreateUser = (req, res) => {
+  res.send("Creat");
+  console.log(req.body)
+}
 module.exports = {
-    getHomepage,
-    getHoidanit
+  getHomepage,
+  getHoidanit,
+  postCreateUser
 }
