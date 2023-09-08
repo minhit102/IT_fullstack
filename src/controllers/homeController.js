@@ -24,8 +24,29 @@ const getHoidanit = (req, res) => {
 }
 
 const postCreateUser = (req, res) => {
-  res.send("Creat");
-  console.log(req.body)
+  let email = req.body.email;
+  let name = req.body.myname;
+  let city = req.body.city;
+  
+
+  
+  //console.log("1.===>>>>"); 
+
+  //console.log(req.body);
+  //console.log("2.===>>>>");
+  //console.log(email ,name , city );
+  console.log("Hoag")
+  connection.query(
+    `INSERT INTO Users ( email, name,city) VALUES ( ?,?,?)`,[email,name,city],
+    function(err, results) {
+      console.log(results);
+      res.send("Creat succeed");
+      
+    }
+    
+  );
+  console.log("Hoag1")
+
 }
 module.exports = {
   getHomepage,
