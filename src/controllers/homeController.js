@@ -46,10 +46,12 @@ const postCreateUser = async (req, res) => {
     //}
   //)
 
-  const[results,fields] = await connection.query('SELECT * FROM Users;')
-  console.log('Dữ liệu trong bảng:');
-  console.log(results);
+  //const[results,fields] = await connection.query('SELECT * FROM Users;')
 
+  let [results,fields] = await connection.query(`INSERT INTO Users(email,name,city) VALUES(?,?,?)`,[email,name,city]);
+  console.log("data : ",results);
+  //res.send('Creat thành công');
+  return res.send('ok');
 }
 const getCreatePage = (req, res) => {
   //res.send("Minh");
