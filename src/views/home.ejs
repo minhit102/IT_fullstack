@@ -18,8 +18,8 @@
         <table id="customers">
             <tr>
                 <th>ID</th>
-                <th>EMAIL</th>
                 <th>NAME</th>
+                <th>EMAIL</th>
                 <th>CITY</th>
                 <th>ACTION</th>
             </tr>
@@ -31,7 +31,8 @@
                     <td><%= listUsers[i].email %></td>
                     <td><%= listUsers[i].city %></td>
                     <td>
-                        <button>Edit</button>
+                        <a href="/edit/<%= listUsers[i].id %>">Edit</a>
+                        
                         <button>Delete</button>
                     </td>
                 </tr>

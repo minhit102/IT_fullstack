@@ -62,8 +62,10 @@ const getCreatePage = (req, res) => {
   return res.render('create.ejs');
 };
 
-const getedit = (req, res) => {
-  res.send("Hay chinh sua")
+const getUpdatePage = (req, res) => {
+  console.log("....................",req.params);
+  res.render('edit.ejs');
+
 
 };
 module.exports = {
@@ -71,5 +73,5 @@ module.exports = {
   getHoidanit,
   postCreateUser,
   getCreatePage,
-  getedit
+  getUpdatePage
 }
