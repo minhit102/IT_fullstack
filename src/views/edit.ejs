@@ -13,20 +13,24 @@
         <a  href="/create">Creat Users</a>
     </div>
     <div class="form-add-new">
-        <form action = "create-user" method = "POST" >
+        <form action = "/update-user" method = "POST" >
             <fieldset>
                 <legend>Update A User</legend>
+                <dev class="input -group d-none">
+                    <lable>Id :</lable>
+                    <input type="text" name = "id" value= "<%= userEdit.id %>" /><br>
+                </dev>
                 <dev class="input -group">
                     <lable>Email :</lable>
-                    <input type="text" name = "email" /><br>
+                    <input type="text" name = "email" value= "<%= userEdit.email %>" /><br>
                 </dev>
                 <dev class="input -group">
                     <lable>Name :</lable>
-                    <input type="text" name = "myname" /><br>
+                    <input type="text" name = "myname" value= "<%= userEdit.name %>" /><br>
                 </dev>
                 <dev class="input -group">
                     <lable>City :</lable>
-                    <input type="text" name = "city" /><br>
+                    <input type="text" name = "city" value= "<%= userEdit.city %>" /><br>
                 </dev>
                 <dev>
                     <button>Save</button>
