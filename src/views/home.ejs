@@ -13,7 +13,7 @@
         <a href="/create">Create Users</a>
     </div>
     <div class="table-container">
-        <div class = "title">List Users</div>
+        <div class="title">List Users</div>
 
         <table id="customers">
             <tr>
@@ -26,19 +26,29 @@
 
             <% for(var i=0; i< listUsers.length ; i++) {%>
                 <tr>
-                    <td><%= listUsers[i].id %> </td>
-                    <td><%= listUsers[i].name %></td>
-                    <td><%= listUsers[i].email %></td>
-                    <td><%= listUsers[i].city %></td>
+                    <td>
+                        <%= listUsers[i].id %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].name %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].email %>
+                    </td>
+                    <td>
+                        <%= listUsers[i].city %>
+                    </td>
                     <td>
                         <a href="/edit/<%= listUsers[i].id %>">Edit</a>
-                        
-                        <button>Delete</button>
+                        <form action="/delete-user/<%= listUsers[i].id %>" method="POST">
+                            <button>Delete</button>
+                        </form>
+
                     </td>
                 </tr>
-             <% } %>
-            
-            
+                <% } %>
+
+
         </table>
     </div>
 </body>
